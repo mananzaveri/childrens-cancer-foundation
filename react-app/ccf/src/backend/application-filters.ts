@@ -1,4 +1,4 @@
-import { collection, query, where, getDocs, orderBy, Query, DocumentData } from 'firebase/firestore';
+import { collection, query, where, getDocs, orderBy, Query, DocumentData, doc, getDoc } from 'firebase/firestore';
 import { auth, db } from '../index';
 import { Application, ApplicationDetails, ApplicationInfo, ApplicationQuestions, NonResearchApplication, ResearchApplication } from '../types/application-types';
 import { getCurrentCycle } from './application-cycle';
@@ -60,4 +60,24 @@ export async function getUsersCurrentCycleAppplications(): Promise<Array<Applica
         ...doc.data()
     })) as unknown as Array<Application>;
     return applications;
+}
+
+export async function getApplicationByID(applicationId: string): Promise<Application | null> {
+    try {
+        const docRef = doc(db, 'applications', applicationId);
+        const docSnap = await getDoc(docRef);
+
+        if (!docSnap.exists()) {
+            return null;
+        }
+
+        return {
+    id: docSnap.id,
+    ...docSnap.data()
+} as unknown as Application;
+
+    } catch (error) {
+        console.error('Error fetching application by ID:', error);
+        return null;
+    }
 }
