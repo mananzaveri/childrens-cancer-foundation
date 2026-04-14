@@ -173,16 +173,16 @@ function AdminApplicationsDatabase(): JSX.Element {
     <div className="admin-database-page">
       <Sidebar links={sidebarItems} />
 
-      <div className="dashboard-container">
-        <div className="dashboard-content">
-          <Header title="Administrator Dashboard" />
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="search-input"
-          />
+            <div className="dashboard-container">
+                <div className="dashboard-content">
+                    <Header title="Administrator Dashboard" />
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="search-input"
+                    />
 
           <div className="filter-container">
             <select
@@ -237,7 +237,7 @@ function AdminApplicationsDatabase(): JSX.Element {
             </select>
           </div>
 
-          {Object.keys(filteredApplications).length === 0 ? (
+          {Object.keys(filteredApplications).length ==== 0 ? (
             "No applications matching filters"
           ) : (
             <div className="dashboard-sections-content">

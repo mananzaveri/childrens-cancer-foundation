@@ -19,6 +19,22 @@
 }
 
 .global-header {
+  font-size: 3rem;
+  color: #be0019;
+}
+
+/* Standardized Page Header Styles */
+.page-header-container {
+  display: flex;
+  align-items: center;
+}
+
+.page-logo {
+  width: 75px;
+  margin-right: 20px;
+}
+
+.global-header {
   font-size: 2rem;
   color: #be0019;
 }
