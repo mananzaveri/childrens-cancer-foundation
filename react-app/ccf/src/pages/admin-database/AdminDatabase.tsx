@@ -237,7 +237,7 @@ function AdminApplicationsDatabase(): JSX.Element {
             </select>
           </div>
 
-          {Object.keys(filteredApplications).length ==== 0 ? (
+          {Object.keys(filteredApplications).length === 0 ? (
             "No applications matching filters"
           ) : (
             <div className="dashboard-sections-content">

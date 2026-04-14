@@ -34,7 +34,6 @@ const buildAboutPages = (): Record<ApplicationAboutType, AboutPage> => ({
     NextGen: getDefaultAboutPage("NextGen"),
     NonResearch: getDefaultAboutPage("NonResearch"),
 });
-import Header from "../../components/header/Header";
 
 function AdminEditInformation(): JSX.Element {
     const [allApplicationsDate, setAllApplicationsDate] = useState<Dayjs | null>(null);
